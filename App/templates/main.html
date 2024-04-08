@@ -4,6 +4,7 @@
     <title>
       music player
     </title>
+    
    </head>
    <body>
     
@@ -24,7 +25,11 @@
         </h1>
        </div>
        
-       <center><a href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}"><i class="fa fa-step-backward fa-2x"></i></a> &nbsp; &nbsp; &nbsp; <a href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }} {% endif %}"><i class="fa fa-step-forward fa-2x"></i></a></center>
+       <div class="centered-links"> <!-- Added a new div for centering -->
+        <a href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}"><i class="fa fa-step-backward fa-2x"></i></a>
+        &nbsp; &nbsp; &nbsp;
+        <a href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }} {% endif %}"><i class="fa fa-step-forward fa-2x"></i></a>
+    </div>
        
        <div class="lecteur">
         <audio class="fc-media" style="width: 100%;" id="fc-media">
@@ -32,15 +37,6 @@
         </audio>
        </div>
       </div>     
-    
-
-    <div class="right-section">
-      <div class="lyrics-container">
-        <div class="lyrics">
-            <p id="song-lyrics" class="song-lyrics" data-lyrics="{{item.lyrics}}"></p>
-        </div>
-     </div>
-    </div>
     
     
     {% endfor %}

@@ -21,44 +21,61 @@
         color: #ccc;
         padding: 0 10%;
     }
-
     .music-player {
-        display: block;
-        position: absolute;
         width: 400px;
         height: 700px;
-        margin: auto;
+        margin: 0 auto; /* Set left and right margins to auto to center horizontally */
         margin-top: 2%;
-        right: 70%;
         border-radius: 0 0 10px 10px;
         background: transparent linear-gradient(to bottom,rgba(0, 0, 0, 0.9) 50%,rgb(0, 0, 0) 70%) repeat scroll 0 0;
         box-shadow: 1px 10px 20px 5px #222;
     }
-    .cover {
-        float: left;
-        width: 100%;
-        height: 66%;
-    }
+    
+    /* Remove float and position absolute from the cover */
     .cover img {
         display: block;
-        position: absolute;
-        top: 8%;
-        left: 14%;
+        margin: auto; /* Set margin to auto to center horizontally */
         width: 70%;
-        margin: auto;
         text-align: center;
     }
+    
     .titre {
-        float: left;
-        width: 100%;
+        text-align: center; /* Align text center */
+        margin-top: 10px; /* Add some top margin for better spacing */
     }
+    
     .lecteur {
-        width: 100%;
-        display: block;
-        height: auto;
-        position: relative;
-        float: left;
+        text-align: center; /* Align text center */
+        margin-top: 20px; /* Add some top margin for better spacing */
     }
+    
+    .right-section {
+        width: 69%;
+        height: 90%;
+        padding: 20px;
+        box-sizing: border-box;
+        background: transparent linear-gradient(to bottom,rgba(4, 3, 3, 0.9) 50%,rgb(0, 0, 0) 70%) repeat scroll 0 0;
+        margin-top: 2%;
+        box-shadow: 1px 10px 20px 5px #222;
+    }
+    
+    .lyrics-container {
+        text-align: center; /* Align text center */
+        padding: 20px;
+    }
+    
+    .lyrics {
+        font-size: 24px; /* Adjust font size as needed */
+        font-family: "Sofia", sans-serif;
+        color: #88ff00;
+        line-height: 1.6;
+    }
+    
+    #song-lyrics {
+        margin: 0; /* Remove default margin */
+    }
+    
+
     .mejs__button>button:focus {
         outline: 0px dotted #999;
     }
@@ -227,32 +244,8 @@
         background: #fff;
     }
 
-
-    /* lyrics section */
-
-   .right-section {
-    float: right; /* Float the right-section to the right */
-    width: 69%; /* Set the width of the right-section (adjust as needed) */
-    height: 90%;
-    padding: 20px; /* Add padding for spacing */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    background: transparent linear-gradient(to bottom,rgba(4, 3, 3, 0.9) 50%,rgb(0, 0, 0) 70%) repeat scroll 0 0;
-    margin-top: 2%;
-    margin-right:0.6% ;
-    box-shadow: 1px 10px 20px 5px #222;;
+    .centered-links {
+        text-align: center; /* Align the links to the center */
+        margin-top: 10px; /* Adjust margin as needed */
     }
-
-    .lyrics-container {
-    padding: 20px; /* Add padding for lyrics container */
-    }
-
-    .lyrics {
-    font-size: 600%;
-    font-family: "Sofia", sans-serif; /* Specify the desired font family */
-    color: #88ff00; /* Set the text color */
-    line-height: 1.6; /* Set the line height for better readability */
-    }
-
-    #song-lyrics {
-    margin: 0px; /* Remove default margin for the lyrics paragraph */
-    }
+    

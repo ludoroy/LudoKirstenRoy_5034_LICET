@@ -5,7 +5,7 @@
  <head>
   <meta charset="utf-8"/>
   <title>
-   music player
+   Music Player
   </title>
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelementplayer.min.css" rel="stylesheet"/>
@@ -13,19 +13,67 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 
+  <style>
+    /* Inline styles for demonstration, replace with your custom CSS */
+    body {
+      font-family: 'Sofia', cursive; /* Use Google font Sofia */
+      background-color: #f0f0f0; /* Light gray background */
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #333; /* Dark background for navbar */
+      color: #fff; /* White text */
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh; /* Set a height to center vertically */
+    }
+
+    
+
+    h1 {
+      color: #fdf4f4; /* Dark gray heading */
+      text-align: center;
+    }
+
+    #song-lyrics {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
  </head>
  <body>
 
- ]
-  {% include 'main.html' %}
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <h2>Music Player</h2>
+  </div>
 
+  <div class="container">
+    <div class="card">
+      <div id="song-lyrics" data-lyrics='[{"time": "0:10", "lyrics": "Verse 1"}, {"time": "0:30", "lyrics": "Chorus"}]'>
+        <!-- Lyrics will be dynamically updated here -->
+      </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelement-and-player.min.js">
-  </script>
-  <script src="{% static './script.js' %}">
-  </script>
+      {% include 'main.html' %}
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelement-and-player.min.js"></script>
+  <script src="{% static './script.js' %}"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -53,7 +101,6 @@
           return minutes * 60 + seconds;
         }
       });
-
   </script>
   
  </body>
